@@ -19,6 +19,7 @@ def func(i):
 if __name__ == "__main__":
     if len(argv) != 2:
         print("Usage factors <file>")
+        exit
     with open(argv[1], "r") as f:
             for i in f:
                 func(i)
