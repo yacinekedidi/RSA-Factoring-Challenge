@@ -1,16 +1,24 @@
 #!/usr/bin/python3
 import sys
 argv = sys.argv
-with open(argv[1], "r") as f:
-    for i in f:
-        x = int(i)
-        if x % 2 != 0:
-            for k in range(3, x, 2):
-                if x % k == 0:
-                    print("{}={}*{}".format(x, int(x / k), k))
-                    break
-        else:
-            for k in range(2, x, 2):
-                if x % k == 0:
-                    print("{}={}*{}".format(x, int(x / k), k))
-                    break
+
+
+def func(i):
+    x = int(i)
+    if x % 2 != 0:
+        for k in range(3, x, 2):
+            if x % k == 0:
+                print("{}={}*{}".format(x, x // k, k))
+                break
+    else:
+        for k in range(2, x, 2):
+            if x % k == 0:
+                print("{}={}*{}".format(x, x // k, k))
+                break
+
+if __name__ == "__main__":
+    if len(argv) != 2:
+        print("Usage factors <file>")
+    with open(argv[1], "r") as f:
+            for i in f:
+                func(i)
