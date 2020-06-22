@@ -3,7 +3,7 @@ import sys
 argv = sys.argv
 
 
-def func(i):
+def func(x):
     x = int(i)
     if x % 2 != 0:
         for k in range(3, x, 2):
@@ -17,9 +17,10 @@ def func(i):
                 break
 
 if __name__ == "__main__":
-    if len(argv) != 2:
-        print("Usage factors <file>")
-        exit
-    with open(argv[1], "r") as f:
+    if len(argv) == 2:
+        with open(argv[1], "r") as f:
             for i in f:
                 func(i)
+    else:
+        print("Usage factors <file>")
+        exit(1)
