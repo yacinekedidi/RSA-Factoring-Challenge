@@ -3,8 +3,8 @@ import sys
 argv = sys.argv
 
 
-def func(x):
-    x = int(x)
+def func(i):
+    x = int(i)
     if x % 2 != 0:
         for k in range(3, x, 2):
             if x % k == 0:
